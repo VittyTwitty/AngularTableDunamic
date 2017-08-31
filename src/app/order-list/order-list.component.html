@@ -4,9 +4,14 @@
       <input class="form-control" placeholder="Имя">
       <input class="form-control" placeholder="Адрес">
     </div>
-    <div class="list-group">
-      <app-order-item></app-order-item>
-     </div>
-    <a href="#" class="btn btn-success btn-sub">Положить в корзину</a>
+    <div *ngIf="flag" class="list-group">
+      <ng-template ngFor let-i="index" let-item [ngForOf]="itemsInList">
+        <app-order-item [item]="item" [i]="i" [items]="itemsInList"></app-order-item>
+      </ng-template>
+    </div>
+    <div *ngIf="!flag" class="list-group">
+      Не выбрано ниодного продукта
+    </div>
+    <button type="button" (click)="addToCart()" class="btn btn-success btn-sub">Положить в корзину</button>
   </form>
 </div>

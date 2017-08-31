@@ -8,8 +8,6 @@ import { ItemsSaverService } from '../../services/items-saver.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-
   public items: any[] = [];
   constructor(
     private foodService: FoodService,
@@ -27,7 +25,6 @@ export class HeaderComponent implements OnInit {
   }
 
   public addProductToList(ev, item) {
-    this.itemsSaverService.itemsInList.push(item);
-    console.log(item)
+    this.itemsSaverService.setItemsInList(item);
   }
 }
