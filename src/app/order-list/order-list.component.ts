@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemsSaverService } from '../services/items-saver.service';
 
 @Component({
   selector: 'app-order-list',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderListComponent implements OnInit {
 
-  constructor() { }
+  public q;
+  constructor(
+    private itemsSaverService: ItemsSaverService
+  ) { }
 
   ngOnInit() {
+    this.q = this.itemsSaverService.itemsInList;
+    console.log(this.q)
   }
 
 }

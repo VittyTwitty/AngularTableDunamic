@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FoodService } from '../../services/users.service';
+import { ItemsSaverService } from '../../services/items-saver.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,8 @@ export class HeaderComponent implements OnInit {
 
   public items: any[] = [];
   constructor(
-    private foodService: FoodService
+    private foodService: FoodService,
+    private itemsSaverService: ItemsSaverService
   ) { }
 
   ngOnInit() {
@@ -22,5 +24,10 @@ export class HeaderComponent implements OnInit {
     return this.foodService.getUser().map((res) => {
       this.items.push(res);
     })
+  }
+
+  public addProductToList(ev, item) {
+    this.itemsSaverService.itemsInList.push(item);
+    console.log(item)
   }
 }

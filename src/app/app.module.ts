@@ -16,6 +16,7 @@ import { OrderListComponent } from './order-list/order-list.component';
 import { OrderItemComponent } from './order-item/order-item.component';
 import { OrderAsideComponent } from './order-aside/order-aside.component';
 import { OrderAsideItemComponent } from './order-aside-item/order-aside-item.component';
+import { ItemsSaverService } from './services/items-saver.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { OrderAsideItemComponent } from './order-aside-item/order-aside-item.com
     RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules })
   ],
   providers: [
-    FoodService
+    FoodService,
+    ItemsSaverService
   ],
   bootstrap: [AppComponent]
 })
