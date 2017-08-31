@@ -1,0 +1,18 @@
+.list-group {
+  padding: 20px 10px 0;
+}
+
+.body-section-form-wrp {
+  display: flex;
+  padding: 0 10px;
+}
+
+.body-section-form-wrp input + input {
+  margin-left: 10px;
+}
+
+.body-section-form .btn-sub {
+  display: inline-block;
+  margin: 20px 10px 0 0;
+  float: right;
+}

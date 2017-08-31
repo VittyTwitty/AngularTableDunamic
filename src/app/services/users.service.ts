@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database";
+import { mockData } from './data';
 
 @Injectable()
-export class UsersService {
+export class FoodService {
 
-  public users: FirebaseListObservable<any[]>
+  public users: any[];
   constructor(private db: AngularFireDatabase) {
-    this.users = this.db.list('/users');
+
   }
 
   public getUser() {
-    return this.db.list('/users');
+    return this.users = mockData;
   }
 
 }

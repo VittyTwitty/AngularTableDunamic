@@ -1,0 +1,17 @@
+li {
+  display: flex;
+  justify-content: space-between;
+}
+
+li > span {
+  display: flex;
+  align-self: center;
+}
+
+li:hover {
+  color: #212529;
+  background-color: #e9ecef;
+}
+
+.list-group .btn-close {
+}
